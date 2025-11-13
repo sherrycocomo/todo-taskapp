@@ -1,3 +1,5 @@
+@import './variables';
+
 input, select {
   &.text {
     width: 100%;
@@ -20,4 +22,7 @@ textarea {
   min-height: 440px;
   resize: vertical;
   border: 1px solid #EBEBEB;
+}
+.field {
+  margin-top: 33px;
 }
