@@ -6,9 +6,20 @@ $header-padding-y: 17px;
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: $base-bg-color;
   padding: $header-padding-y 30px;
   border-bottom: 1px solid rgba($text-base-color, 0.1);
+  position: relative;
+
+  &_logoutBtn {
+    border: none;
+    background-color: transparent;
+    padding: 8px 16px;
+    color: $text-base-color;
+    cursor: pointer;
+    font-size: 16px;
+  }
 }
 
 .dropbtn {

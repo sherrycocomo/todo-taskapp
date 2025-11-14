@@ -22,7 +22,18 @@
   %body
     %header.header
       %h1.header_title Boards
-    %main
-      %p.notice= notice
-      %p.alert= alert
-      = yield
+      - if user_signed_in?
+        .dropdown
+          = image_tag "avatar_image.png", class: "header_avatar dropbtn"
+          .dropdown-content
+            = button_to 'Logout', destroy_user_session_path, method: :delete, class: 'header_logoutBtn'
+      - else
+        .header_placeholder
+    - if flash.present?
+      .flash
+        - flash.each do |key, value|
+          %div{:class => key}= value
+    -# %main
+      -# %p.notice= notice
+      -# %p.alert= alert
+    = yield
