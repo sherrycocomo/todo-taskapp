@@ -1,0 +1,46 @@
+@import 'header';
+@import 'tabs';
+@import 'variables';
+@import 'card';
+@import 'form';
+@import 'button';
+@import 'flash';
+
+html {
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  height: 100%;
+  background-color: $base-bg-color;
+  font-size: $base-font-size;
+  color: $text-base-color;
+  font-family: "Nunito", sans-serif;
+}
+
+.container {
+  padding: 32px 26px;
+  width: 100%;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: $base-font-size;
+}
+
+h2 {
+  font-size: $font-lg;
+}

@@ -8,6 +8,11 @@
     = csrf_meta_tags
     = csp_meta_tag
     = yield :head
+    // Google Fonts
+    %link{:rel => "preconnect", :href => "https://fonts.googleapis.com"}
+    %link{:rel => "preconnect", :href => "https://fonts.gstatic.com", :crossorigin => true}
+    %link{:href => "https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&display=swap", :rel => "stylesheet"}
+
     %link{:href => "/manifest.json", :rel => "manifest"}/
     %link{:href => "/icon.png", :rel => "icon", :type => "image/png"}/
     %link{:href => "/icon.svg", :rel => "icon", :type => "image/svg+xml"}/
@@ -15,4 +20,20 @@
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
   %body
+    %header.header
+      %h1.header_title Boards
+      - if user_signed_in?
+        .dropdown
+          = image_tag "avatar_image.png", class: "header_avatar dropbtn"
+          .dropdown-content
+            = button_to 'Logout', destroy_user_session_path, method: :delete, class: 'header_logoutBtn'
+      - else
+        .header_placeholder
+    - if flash.present?
+      .flash
+        - flash.each do |key, value|
+          %div{:class => key}= value
+    -# %main
+      -# %p.notice= notice
+      -# %p.alert= alert
     = yield
