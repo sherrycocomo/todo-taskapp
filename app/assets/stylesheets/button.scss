@@ -10,11 +10,9 @@
     font-weight: 800;
     border-radius: 4px;
     font-size: $base-font-size;
-    position: fixed;
-    bottom: 32px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
+    width: 100%;
+    margin-top: 30px;
+    cursor: pointer;
 }
 .delete_article_btn {
     border:none;

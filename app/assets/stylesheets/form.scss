@@ -22,11 +22,9 @@ textarea {
   min-height: 440px;
   resize: vertical;
   border: 1px solid #EBEBEB;
+  background-color: $sub-bg-color;
+  border-radius: 10px;
 }
 .field {
   margin-top: 33px;
-}
-
-.field:nth-of-type(3) {
-  margin-top: 16px;
 }
