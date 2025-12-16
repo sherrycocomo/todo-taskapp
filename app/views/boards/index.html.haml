@@ -1,2 +1,16 @@
-%h1 Boards#index
-%p Find me in app/views/boards/index.html.erb
+.container
+    %h2 All Boards
+    .board_wrapper
+        - @boards.each do |board|
+            .board
+                .board_title
+                    = board.title
+                .dropdown
+                    = image_tag 'actions.png', class: 'dropbtn'
+                    .dropdown-content.mini
+                .board_content
+                    = board.content
+                .board_detail
+                    = image_tag 'default-avatar.png'
+        = link_to new_board_path, class: 'new_board' do
+            + Add new board
