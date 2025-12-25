@@ -10,12 +10,12 @@ class BoardsController < ApplicationController
   end
 
   def create
-    @board = current_user.board.build(board_params)
+    @board = current_user.boards.build(board_params)
     if @board.save
-      redirect_to board_path(@board), notice: '保存できたよ'
+      redirect_to root_path(@board), notice: '保存できたよ'
     else
       flash.now[:error] = '保存に失敗しました'
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
