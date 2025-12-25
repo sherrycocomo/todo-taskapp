@@ -8,6 +8,7 @@
                 .dropdown
                     = image_tag 'actions.png', class: 'dropbtn'
                     .dropdown-content.mini
+                        = link_to 'Edit', edit_board_path(board)
                 .board_content
                     = board.content
                 .board_detail

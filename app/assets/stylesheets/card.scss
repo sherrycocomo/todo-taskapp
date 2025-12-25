@@ -46,6 +46,11 @@ $avatar-size: 30px;
       width: 100%;
     }
   }
+  .dropdown-content.mini {
+    border-radius: 10px;
+    padding: 13px;
+    min-width: 66px;
+  }
 }
 .new_board {
   display: flex;
