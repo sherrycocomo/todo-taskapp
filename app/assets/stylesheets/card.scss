@@ -1,34 +1,15 @@
 @import './variables';
 
 $heart-size: 16px;
-$avatar-size: 32px;
+$avatar-size: 30px;
 
-.card {
-  background-color: white;
-  margin: 16px 0;
-  cursor: pointer;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-
-  &_heart {
-    display: flex;
-
-    img {
-      width: $heart-size;
-      height: $heart-size;
-    }
-
-    span {
-      margin-left: 8px;
-      font-size: 12px;
-      font-weight: bold;
-      color: $primary-color;
-      line-height: $heart-size;
-    }
-  }
+.board {
+  background-color: $sub-bg-color;
+  margin: 35px 0 26px;
+  padding: 32px 17px;
+  border-radius: 10px;
 
   &_detail {
-    padding-top: 12px;
-    cursor: pointer;
     display: flex;
     font-size: 10px;
 
@@ -41,22 +22,47 @@ $avatar-size: 32px;
   }
 
   &_content {
-    padding: 16px 16px;
+    padding-top :6px;
+    padding-bottom: 29px;
+    font-size: 14px;
+    opacity: 0.4;
+    clear: both;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
-  &_image {
-    height: 180px;
-    position: relative;
-    overflow: hidden;
+  &_title {
+    display: inline-block;
+    vertical-align: middle;
+  }
 
+  .dropdown {
+    display: inline-block;
+    float: right;
+    vertical-align: middle;
     img {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
+      max-width: 24px;
       width: 100%;
     }
   }
+  .dropdown-content.mini {
+    border-radius: 10px;
+    padding: 13px;
+    min-width: 66px;
+  }
+}
+.new_board {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  height: 160px;
+  border: 1px dotted #333;
+  background-color: $base-bg-color;
+  padding: 67px 0px;
+  text-decoration: none;
+  color: $text-base-color;
 }
