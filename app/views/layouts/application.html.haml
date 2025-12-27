@@ -21,7 +21,8 @@
     = javascript_importmap_tags
   %body
     %header.header
-      %h1.header_title Boards
+      = link_to root_path do
+        %h1.header_title Boards
       - if user_signed_in?
         .dropdown
           = image_tag "avatar_image.png", class: "header_avatar dropbtn"

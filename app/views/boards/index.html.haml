@@ -3,13 +3,14 @@
     .board_wrapper
         - @boards.each do |board|
             .board
-                .board_title
-                    = board.title
-                .dropdown
-                    = image_tag 'actions.png', class: 'dropbtn'
-                    .dropdown-content.mini
-                        = link_to 'Edit', edit_board_path(board)
-                        = link_to 'Delete', board_path(board), data: { turbo_method: 'delete', turbo_confirm: '本当に削除してもよろしいですか？' }
+                .board_header
+                    .board_title
+                        = board.title
+                    .dropdown
+                        = image_tag 'actions.png', class: 'dropbtn'
+                        .dropdown-content.mini
+                            = link_to 'Edit', edit_board_path(board)
+                            = link_to 'Delete', board_path(board), data: { turbo_method: 'delete', turbo_confirm: '本当に削除してもよろしいですか？' }
                 .board_content
                     = board.content
                 .board_detail

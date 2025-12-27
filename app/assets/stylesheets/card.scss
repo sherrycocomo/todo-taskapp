@@ -33,17 +33,27 @@ $avatar-size: 30px;
   }
 
   &_title {
-    display: inline-block;
-    vertical-align: middle;
+    display: block;
+    margin: 0;
+    padding-right: 10px;
+  }
+
+  &_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .dropdown {
     display: inline-block;
-    float: right;
     vertical-align: middle;
+    flex: 0 0 auto;
+    cursor: pointer
     img {
-      max-width: 24px;
-      width: 100%;
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      display: block;
     }
   }
   .dropdown-content.mini {
