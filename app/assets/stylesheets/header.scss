@@ -22,4 +22,9 @@ $header-padding-y: 17px;
     width: 100%;
     text-align: left;
   }
+  .header_title {
+    text-decoration: none;
+    color: $text-base-color;
+    border-bottom: none;
+  }
 }
