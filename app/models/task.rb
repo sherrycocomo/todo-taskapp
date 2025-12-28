@@ -15,4 +15,9 @@
 #  index_tasks_on_user_id  (user_id)
 #
 class Task < ApplicationRecord
+    validates :title, presence: true
+    validates :content, presence: true
+    validates :deadline, presence: true
+
+    belongs_to :user
 end
