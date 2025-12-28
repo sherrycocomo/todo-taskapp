@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
-  before_action :set_board, only:[:edit, :update]
+  before_action :set_board, only:[:edit, :update, :show]
   before_action :authenticate_user!
 
   def index
@@ -36,6 +36,9 @@ class BoardsController < ApplicationController
     board = current_user.boards.find(params[:id])
     board.destroy!
     redirect_to root_path, status: :see_other, notice: '削除に成功しました'
+  end
+
+  def show
   end
 
   private
