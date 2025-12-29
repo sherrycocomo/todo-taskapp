@@ -1,2 +1,15 @@
 .container
     %h2= @board.title
+    .board_wrapper
+        - @tasks.each do |task|
+            .board_row
+                .board
+                    .board_header
+                        .board_title
+                            = task.title
+                    .board_content
+                        = task.content
+                    .board_detail
+                        = image_tag 'default-avatar.png'
+    = link_to new_task_path, class: 'new_board' do
+        + Add new card
