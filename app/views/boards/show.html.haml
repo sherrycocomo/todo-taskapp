@@ -4,6 +4,9 @@
         - @tasks.each do |task|
             .board_row
                 .board
+                    -if task.eyecatch.attached?
+                        .board_image
+                            = image_tag task.eyecatch
                     .board_header
                         .board_title
                             = task.title
