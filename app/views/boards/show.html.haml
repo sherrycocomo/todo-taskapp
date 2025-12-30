@@ -11,5 +11,5 @@
                         = task.content
                     .board_detail
                         = image_tag 'default-avatar.png'
-    = link_to new_task_path, class: 'new_board' do
+    = link_to new_board_task_path(@board), class: 'new_board' do
         + Add new card

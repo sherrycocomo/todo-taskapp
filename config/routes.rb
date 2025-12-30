@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root 'boards#index'
 
-  resources :boards
-  resources :tasks
+  resources :boards do
+    resources :tasks, only: [:new, :create]
+  end
 end
