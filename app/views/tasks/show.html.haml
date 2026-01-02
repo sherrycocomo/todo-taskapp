@@ -1,0 +1,14 @@
+.container
+    .task_header
+        %h2= truncate(@task.title, length: 20)
+        .task_actions
+            .dropdown
+                = image_tag 'actions.png'
+                .dropdown-content.mini
+    .task_wrapper
+        .task
+            -if @task.eyecatch.attached?
+                .task_image
+                    = image_tag @task.eyecatch
+            .task_text
+                = @task.content
