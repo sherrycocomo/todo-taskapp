@@ -5,6 +5,7 @@
             .dropdown
                 = image_tag 'actions.png'
                 .dropdown-content.mini
+                    = link_to 'Edit', edit_board_task_path(@board, @task)
     .task_wrapper
         .task
             -if @task.eyecatch.attached?
