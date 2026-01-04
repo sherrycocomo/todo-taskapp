@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
     before_action :authenticate_user!
     before_action :set_board
-    before_action :set_task, only: [:show, :edit, :update]
+    before_action :set_task, only: [:show, :edit, :update, :destroy]
 
     def new
         @task = @board.tasks.build(user: current_user)
@@ -32,6 +32,11 @@ class TasksController < ApplicationController
             flash.now[:error] = '更新できませんでした'
             render :edit, status: :unprocessable_entity
         end
+    end
+
+    def destroy
+        @task.destroy!
+        redirect_to board_path(@board), status: :see_other, notice: '削除に成功しました'
     end
 
     private
