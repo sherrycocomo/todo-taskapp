@@ -1,0 +1,19 @@
+.container
+    %h2= @board.title
+    .board_wrapper
+        - @tasks.each do |task|
+            .board_row
+                = link_to board_task_path(@board, task) do
+                    .board
+                        -if task.eyecatch.attached?
+                            .board_image
+                                = image_tag task.eyecatch
+                        .board_header
+                            .board_title
+                                = task.title
+                        .board_content
+                            = task.content
+                        .board_detail
+                            = image_tag 'default-avatar.png'
+    = link_to new_board_task_path(@board), class: 'new_board' do
+        + Add new card

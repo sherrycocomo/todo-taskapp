@@ -1,0 +1,29 @@
+@import './variables';
+
+.task_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h2 {
+        padding-right: 25px;
+    }
+}
+.task {
+    border-radius: 10px;
+    &_image {
+        img {
+            width: 100%;
+            border-radius: 8px;
+            height: 170px;
+            object-fit: cover;
+            margin-top: 32px;
+        }
+    }
+    &_text {
+        margin-top: 35px;
+        padding: 25px 15px;
+        background-color: $sub-bg-color;
+        border-radius: 10px;
+        font-size: 14px;
+    }
+}

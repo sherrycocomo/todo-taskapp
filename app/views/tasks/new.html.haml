@@ -1,0 +1,6 @@
+.container
+    %ul
+        - @task.errors.full_messages.each do |message|
+            %li= message
+    %h2 New Card
+    = render 'form', task: @task
