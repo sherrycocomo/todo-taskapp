@@ -14,5 +14,13 @@
                     = image_tag @task.eyecatch
             .task_text
                 = @task.content
+    .comment_wrapper
+        %h3 Comment
+        - @comments.each do |comment|
+            .comment_detail
+                .comment_avatar
+                    = image_tag 'default-avatar.png'
+                .comment_content
+                    = comment.content
     = link_to new_board_task_comment_path(@board, @task), class: 'new_comment' do
         + Add new comment

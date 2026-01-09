@@ -20,3 +20,22 @@
     margin-top: 32px;
     font-size: 14px;
 }
+
+.comment_wrapper {
+    margin-top: 35px;
+}
+
+.comment_detail {
+    display: flex;
+    align-items: center;
+    &:first-of-type {
+        margin-top: 25px;
+    }
+    &:not(:first-of-type) {
+        margin-top: 32px;
+    }
+}
+.comment_avatar {
+    margin-right: 16px;
+    vertical-align: middle;
+}

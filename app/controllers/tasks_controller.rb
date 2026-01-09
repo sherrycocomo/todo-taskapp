@@ -20,6 +20,7 @@ class TasksController < ApplicationController
     end
 
     def show
+        @comments = @task.comments
     end
 
     def edit
