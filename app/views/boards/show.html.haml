@@ -14,6 +14,10 @@
                         .board_content
                             = task.content
                         .board_detail
-                            = image_tag 'default-avatar.png'
+                            .board_avatar
+                                = image_tag 'default-avatar.png'
+                            .board_comment
+                                %span= task.comment_count
+                                = image_tag 'speech-balloon.png'
     = link_to new_board_task_path(@board), class: 'new_board' do
         + Add new card

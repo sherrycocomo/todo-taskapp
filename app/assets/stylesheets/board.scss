@@ -14,13 +14,26 @@ $avatar-size: 30px;
 
   &_detail {
     display: flex;
-    font-size: 10px;
+    align-items: center;
+    justify-content: space-between;
 
-    img {
+    .board_avatar {
       width: $avatar-size;
       height: $avatar-size;
       border-radius: 100%;
       margin-right: 8px;
+    }
+    .board_comment {
+      span {
+        display: inline-block;
+        font-size: 14px;
+        vertical-align: text-top;
+        opacity: 0.2;
+      }
+      img {
+        width: 20px;
+        height: 20px;
+      }
     }
   }
 
