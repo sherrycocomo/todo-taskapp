@@ -1,0 +1,41 @@
+@import './variables';
+
+.comment_textarea {
+    margin-top: 33px;
+}
+
+.new_comment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    height: 57px;
+    border: 1px dotted #333;
+    background-color: $base-bg-color;
+    padding: 20px 0px;
+    text-decoration: none;
+    color: $text-base-color;
+    margin-top: 32px;
+    font-size: 14px;
+}
+
+.comment_wrapper {
+    margin-top: 35px;
+}
+
+.comment_detail {
+    display: flex;
+    align-items: center;
+    &:first-of-type {
+        margin-top: 25px;
+    }
+    &:not(:first-of-type) {
+        margin-top: 32px;
+    }
+}
+.comment_avatar {
+    margin-right: 16px;
+    vertical-align: middle;
+}

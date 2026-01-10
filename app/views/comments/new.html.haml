@@ -1,0 +1,7 @@
+.container
+    - if @comment.errors.any?
+        %ul
+            - @comment.errors.full_messages.each do |message|
+                %li= message
+    %h2 New Comment
+    = render 'form', comment: @comment
