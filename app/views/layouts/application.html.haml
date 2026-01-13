@@ -27,6 +27,7 @@
         .dropdown
           = image_tag "avatar_image.png", class: "header_avatar dropbtn"
           .dropdown-content
+            = link_to 'Profile', profile_path
             = button_to 'Logout', destroy_user_session_path, method: :delete, class: 'header_logoutBtn'
       - else
         .header_placeholder
