@@ -27,7 +27,7 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_one :profile, dependent: :destroy
 
-  delegate :birthday, :gender, to: :profile, allow_nil: true
+  delegate :birthday, :age, :gender, to: :profile, allow_nil: true
 
   def display_name
     profile&.nickname || self.email.split('@').first
