@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
-  before_action :set_board, only:[:edit, :update, :show]
+  before_action :set_board, only:[:edit, :update]
   before_action :authenticate_user!
 
   def index
@@ -39,7 +39,14 @@ class BoardsController < ApplicationController
   end
 
   def show
-    @tasks = @board.tasks
+    @board = Board.find(params[:id])
+    @tasks = @board.tasks.includes(:user, comments: :user)
+
+    @task_users = {}
+    @tasks.each do |task|
+      @task_users[task.id] =
+        ([task.user] + task.comments.map(&:user)).uniq
+    end
   end
 
   private

@@ -1,10 +1,10 @@
 class TasksController < ApplicationController
     before_action :authenticate_user!
     before_action :set_board
-    before_action :set_task, only: [:show, :edit, :update, :destroy]
+    before_action :set_task, only: [:edit, :update, :destroy]
 
     def new
-        @task = @board.tasks.build(user: current_user)
+        @task = @board.tasks.build
     end
 
     def create
@@ -20,6 +20,7 @@ class TasksController < ApplicationController
     end
 
     def show
+        @task = Task.find(params[:id])
         @comments = @task.comments
     end
 
@@ -42,7 +43,7 @@ class TasksController < ApplicationController
 
     private
     def set_board
-        @board = current_user.boards.find(params[:board_id])
+        @board = Board.find(params[:board_id])
     end
 
     def set_task

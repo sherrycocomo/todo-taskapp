@@ -1,12 +1,13 @@
 .container
     .task_header
         %h2= truncate(@task.title, length: 20)
-        .task_actions
-            .dropdown
-                = image_tag 'actions.png'
-                .dropdown-content.mini
-                    = link_to 'Edit', edit_board_task_path(@board, @task)
-                    = link_to 'Delete', board_task_path(@board, @task), data: { turbo_method: :delete, turbo_confirm: '本当に削除してもよろしいですか？' }
+        - if @task.user == current_user
+            .task_actions
+                .dropdown
+                    = image_tag 'actions.png'
+                    .dropdown-content.mini
+                        = link_to 'Edit', edit_board_task_path(@board, @task)
+                        = link_to 'Delete', board_task_path(@board, @task), data: { turbo_method: :delete, turbo_confirm: '本当に削除してもよろしいですか？' }
     .task_wrapper
         .task
             -if @task.eyecatch.attached?
@@ -19,7 +20,7 @@
         - @comments.each do |comment|
             .comment_detail
                 .comment_avatar
-                    = image_tag 'default-avatar.png'
+                    = image_tag comment.user.avatar_image
                 .comment_content
                     = comment.content
     = link_to new_board_task_comment_path(@board, @task), class: 'new_comment' do

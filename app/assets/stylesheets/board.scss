@@ -16,12 +16,24 @@ $avatar-size: 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    img {
+      width: $avatar-size;
+      height: $avatar-size;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+    .board_avatar_stack {
+      display: flex;
+      align-items: center;
+    }
     .board_avatar {
       width: $avatar-size;
       height: $avatar-size;
       border-radius: 100%;
       margin-right: 8px;
+      &:nth-of-type(n+2) {
+        margin-left: -18px;
+      }
     }
     .board_comment {
       span {
