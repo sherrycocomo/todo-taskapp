@@ -31,4 +31,10 @@ $header-padding-y: 17px;
     color: $text-base-color;
     border-bottom: none;
   }
+  &_avatar {
+    width: $avatar-size;
+    height: $avatar-size;
+    object-fit: cover;
+    border-radius: 20px;
+  }
 }

@@ -16,6 +16,12 @@ $avatar-size: 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    img {
+      width: $avatar-size;
+      height: $avatar-size;
+      object-fit: cover;
+      border-radius: 20px;
+    }
 
     .board_avatar {
       width: $avatar-size;

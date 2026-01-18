@@ -38,4 +38,10 @@
 .comment_avatar {
     margin-right: 16px;
     vertical-align: middle;
+    img {
+      width: $avatar-size;
+      height: $avatar-size;
+      object-fit: cover;
+      border-radius: 20px;
+    }
 }

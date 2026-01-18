@@ -15,7 +15,7 @@
                             = task.content
                         .board_detail
                             .board_avatar
-                                = image_tag 'default-avatar.png'
+                                = image_tag task.user.avatar_image
                             .board_comment
                                 %span= task.comment_count
                                 = image_tag 'speech-balloon.png'

@@ -5,6 +5,10 @@
                 %li= message
     = form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
         %div
+            = f.label :avatar, 'Avatar'
+        %div
+            = f.file_field :avatar
+        .field
             = f.label :nickname, 'Handlename'
         %div
             = f.text_field :nickname, class: 'text'
