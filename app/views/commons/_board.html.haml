@@ -8,9 +8,10 @@
                 = board.content
             .board_detail
                 = image_tag board.user.avatar_image
-    .board_actions
-        .dropdown
-            = image_tag 'actions.png'
-            .dropdown-content.mini
-                = link_to 'Edit', edit_board_path(board)
-                = link_to 'Delete', board_path(board), data: { turbo_method: :delete, turbo_confirm: '本当に削除してもよろしいですか？' }
+    - if board.user == current_user
+        .board_actions
+            .dropdown
+                = image_tag 'actions.png'
+                .dropdown-content.mini
+                    = link_to 'Edit', edit_board_path(board)
+                    = link_to 'Delete', board_path(board), data: { turbo_method: :delete, turbo_confirm: '本当に削除してもよろしいですか？' }
