@@ -40,7 +40,13 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
-    @tasks = @board.tasks
+    @tasks = @board.tasks.includes(:user, comments: :user)
+
+    @task_users = {}
+    @tasks.each do |task|
+      @task_users[task.id] =
+        ([task.user] + task.comments.map(&:user)).uniq
+    end
   end
 
   private
